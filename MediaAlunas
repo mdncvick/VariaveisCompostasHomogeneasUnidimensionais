@@ -1,0 +1,36 @@
+algoritmo "MediaAlunas"
+var
+   N: vetor [1..4] de caractere
+   N1: vetor [1..4] de real
+   N2: vetor [1..4] de real
+   M: vetor [1..4] de real
+   i: inteiro
+   nome: vetor [1..4] de caractere
+   SM: real
+   TotM: real
+inicio
+   Para i <- 1 ate 4 faca
+      EscrevaL ("Qual o nome da", i, "° aluna?")
+      Leia (nome[i])
+      EscrevaL ("Nota 1:")
+      Leia (N1[i])
+      EscrevaL ("Nota 2:")
+      Leia (N2[i])
+      M[i] <- (N1[i] + N2[i]) / 2
+      SM <- SM + M[i]
+      EscrevaL ("A média desta(o) aluna(o) é:", M[i])
+      EscrevaL ()
+   FimPara
+   LimpaTela
+   EscrevaL ("------------------")
+   EscrevaL ("Listagem de alunos")
+   EscrevaL ("------------------")
+   TotM <- SM / 4
+   Para i <- 1 ate 4 faca
+      Se M[i] > TotM entao
+         EscrevaL ("A aluna ", nome[i], " teve média ", M[i], " e foi acima da média.")
+      senao
+         EscrevaL ("A aluna ", nome[i], " teve média ", M[i], " e foi abaixo da média.")
+      FimSe
+   FimPara
+fimalgoritmo
